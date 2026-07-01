@@ -1,148 +1,372 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>纪念生物地理老师</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
-        }
-        body {
-            background: url("./img/bg.jpg") no-repeat center fixed;
-            background-size: cover;
-            min-height: 100vh;
-            color: #222;
-        }
-        .mask {
-            width: 100%;
-            min-height: 100vh;
-            background: rgba(255,255,255,0.88);
-            padding: 40px 20px;
-        }
-        header {
-            text-align: center;
-            padding: 30px 0;
-            border-bottom: 2px solid #4a9c7d;
-            margin-bottom: 40px;
-        }
-        h1 {
-            font-size: 2.4rem;
-            color: #2d7d5c;
-            margin-bottom: 12px;
-        }
-        .sub-title {
-            font-size: 1.1rem;
-            color: #555;
-        }
-        .teacher-box {
-            max-width: 1100px;
-            margin: 0 auto 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-        }
-        .card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(74,156,125,0.18);
-            transition: 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-        }
-        .card-img {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-        }
-        .card-text {
-            padding: 24px;
-        }
-        .card h2 {
-            color: #2d7d5c;
-            margin-bottom: 10px;
-        }
-        .card p {
-            line-height: 1.7;
-            color: #444;
-            margin-top: 8px;
-        }
-        .memory {
-            max-width: 1100px;
-            margin: 0 auto 60px;
-        }
-        .memory h2 {
-            text-align: center;
-            color: #2d7d5c;
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-        }
-        .memory-img {
-            width: 100%;
-            border-radius: 14px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-        }
-        .memory-desc {
-            text-align: center;
-            margin-top: 15px;
-            line-height: 1.8;
-            font-size: 1.05rem;
-        }
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 20px;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        @media (max-width:600px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            .card-img {
-                height: 280px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>致生物·地理老师 | 初三毕业纪念</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #e9f3e6 0%, #d4e5d0 100%);
+      font-family: 'Segoe UI', 'Noto Serif SC', '楷体', 'KaiTi', '华文楷体', 'STKaiti', 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* 装饰性自然元素背景 */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.08"><path d="M70 40 Q85 20 100 40 T130 40" stroke="%233b5e3b" fill="none" stroke-width="1.2"/><circle cx="45" cy="140" r="8" fill="%232d5a27" /><circle cx="160" cy="35" r="12" fill="%233f6b3a" /><path d="M30 170 Q45 155 60 170 T90 170" stroke="%235a7d4a" fill="none" stroke-width="1"/><ellipse cx="145" cy="165" rx="14" ry="5" fill="%23305d2c" /></svg>');
+      background-repeat: repeat;
+      background-size: 180px 180px;
+      pointer-events: none;
+    }
+
+    .memorial-card {
+      max-width: 950px;
+      width: 100%;
+      background: rgba(255, 248, 240, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: linear-gradient(135deg, rgba(255, 251, 245, 0.9) 0%, rgba(240, 255, 240, 0.9) 100%);
+      box-shadow: 0 30px 55px rgba(40, 60, 30, 0.25), 0 10px 25px rgba(70, 90, 50, 0.2);
+      border-radius: 3.5rem 3.5rem 3rem 3rem;
+      padding: 2.8rem 2.5rem;
+      position: relative;
+      z-index: 10;
+      border: 1px solid rgba(130, 160, 110, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .title-section {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .graduation-badge {
+      display: inline-block;
+      background: #c7b595;
+      color: #2d3e1f;
+      padding: 0.3rem 1.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      font-weight: 500;
+      background: #e7d7b8;
+      margin-bottom: 0.8rem;
+      border: 1px solid #b4945a;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2.9rem;
+      font-weight: 500;
+      color: #2d4820;
+      margin: 0.5rem 0 0.2rem;
+      line-height: 1.3;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 0 rgba(255, 255, 200, 0.7);
+      font-family: "华文楷体", "KaiTi", "楷体", "Noto Serif SC", serif;
+    }
+
+    .subhead {
+      font-size: 1.2rem;
+      color: #5a6842;
+      border-top: 1px dashed #b8cfaa;
+      border-bottom: 1px dashed #b8cfaa;
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      margin-top: 0.8rem;
+      font-style: italic;
+    }
+
+    /* 班级合影区域 */
+    .class-photo-section {
+      margin: 2rem 0 2.2rem;
+      text-align: center;
+    }
+
+    .photo-frame {
+      display: inline-block;
+      background: #f7f3e0;
+      padding: 0.8rem 0.8rem 0.5rem;
+      border-radius: 2.5rem 2.5rem 2rem 2rem;
+      box-shadow: 0 15px 25px rgba(70, 60, 30, 0.2);
+      border: 2px solid #cfb991;
+      background: #fef9e7;
+      max-width: 100%;
+    }
+
+    .class-photo {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 1.8rem;
+      display: block;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      background: #d9d0b5; /* 占位背景色，图片加载前显示 */
+    }
+
+    .photo-caption {
+      margin-top: 0.7rem;
+      font-size: 1rem;
+      color: #4f5e36;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      letter-spacing: 1px;
+    }
+
+    .teachers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+      justify-content: center;
+    }
+
+    .teacher-card {
+      flex: 1 1 260px;
+      min-width: 240px;
+      background: #faf7f0;
+      border-radius: 2.5rem 2.5rem 2rem 2rem;
+      padding: 1.9rem 1.2rem 1.8rem;
+      box-shadow: 0 15px 28px rgba(80, 70, 40, 0.15);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border: 1px solid #d4c5a0;
+      position: relative;
+      background: linear-gradient(180deg, #fef9ed 0%, #f3f0df 100%);
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 35px rgba(60, 70, 20, 0.25);
+    }
+
+    .icon-circle {
+      background: #dde8d0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 3.5rem;
+      box-shadow: 0 8px 18px rgba(100, 120, 60, 0.3);
+      background: radial-gradient(circle at 30% 30%, #f4ffe6, #c2d6a8);
+      border: 3px solid #fffbf0;
+      color: #2d4b1e;
+    }
+
+    .bio-icon {
+      background: radial-gradient(circle at 30% 30%, #e1f5d5, #9bbf7a);
+    }
+
+    .geo-icon {
+      background: radial-gradient(circle at 30% 30%, #d4e6f0, #7a9fb0);
+      color: #1e3b4b;
+    }
+
+    .teacher-name {
+      font-size: 2rem;
+      font-weight: 500;
+      color: #3b5425;
+      margin-bottom: 0.2rem;
+      font-family: "楷体", "KaiTi", serif;
+    }
+
+    .subject-tag {
+      font-size: 0.9rem;
+      background: #e1cfaa;
+      padding: 0.2rem 1.2rem;
+      border-radius: 20px;
+      color: #3d4d1f;
+      margin: 0.5rem 0 0.9rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+    }
+
+    .message {
+      font-size: 0.98rem;
+      color: #4a4a3a;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0.7rem 0 0.5rem;
+      padding: 0 0.2rem;
+      quotes: "“" "”";
+    }
+
+    .message::before {
+      content: "“";
+      font-size: 1.4rem;
+      color: #8f9e6b;
+    }
+
+    .message::after {
+      content: "”";
+      font-size: 1.4rem;
+      color: #8f9e6b;
+    }
+
+    .memory-note {
+      font-size: 0.8rem;
+      color: #7b6e4f;
+      margin-top: 0.8rem;
+      background: #f4efdb;
+      padding: 0.35rem 1rem;
+      border-radius: 15px;
+      display: inline-block;
+    }
+
+    .footer-message {
+      margin-top: 2.8rem;
+      text-align: center;
+      padding: 1.2rem 1.5rem;
+      background: rgba(214, 228, 194, 0.55);
+      border-radius: 3rem 3rem 2rem 2rem;
+      backdrop-filter: blur(5px);
+      border: 1px solid #b7b386;
+    }
+
+    .farewell-text {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #3a4f28;
+      line-height: 1.8;
+      font-family: "楷体", "KaiTi", "华文楷体", serif;
+    }
+
+    .small-caps {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: #5e6744;
+      display: block;
+      margin-top: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    .leaf-decor {
+      display: flex;
+      justify-content: center;
+      gap: 0.7rem;
+      margin: 1rem 0 0;
+      font-size: 1.6rem;
+      opacity: 0.8;
+      color: #5d7942;
+    }
+
+    @media (max-width: 650px) {
+      .memorial-card {
+        padding: 2rem 1.5rem;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .class-photo {
+        max-width: 100%;
+        aspect-ratio: 4/3;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="mask">
-        <header>
-            <h1>告别生地课堂，不忘恩师教诲</h1>
-            <p class="sub-title">升初三再无生物地理课，以此网页纪念两位老师</p>
-        </header>
-
-        <div class="teacher-box">
-            <div class="card">
-                <img src="./img/bio.jpg" alt="生物老师" class="card-img">
-                <div class="card-text">
-                    <h2>生物老师</h2>
-                    <p>谢谢您带我们认识细胞、山河生灵，教会我们生命的美好与珍贵。课堂上生动有趣的讲解，我们永远记在心里。</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="./img/geo.jpg" alt="地理老师" class="card-img">
-                <div class="card-text">
-                    <h2>地理老师</h2>
-                    <p>一张地图看遍世界，经纬、气候、山川湖海，是您为我们打开地球的大门。</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="memory">
-            <h2>我们的生地课堂回忆</h2>
-            <img src="./img/class.jpg" alt="班级合照" class="memory-img">
-            <p class="memory-desc">两年生地时光匆匆结束，即将奔赴初三。感恩两位老师两年陪伴，谆谆教诲，终生难忘。</p>
-        </div>
-
-        <footer>
-            <p>2026届初二毕业生制作｜纪念生物地理恩师</p>
-        </footer>
+  <main class="memorial-card">
+    <div class="title-section">
+      <span class="graduation-badge">✦ 2025届 · 初三毕业 ✦</span>
+      <h1>致我们亲爱的老师</h1>
+      <div class="subhead">生物与地理 · 难忘的探索时光</div>
     </div>
+
+    <!-- 班级合影模块（本地图片） -->
+    <div class="class-photo-section">
+      <div class="photo-frame">
+        <img 
+          src="class.jpg" 
+          alt="初三班级合影" 
+          class="class-photo"
+          onerror="this.style.display='none'; this.parentNode.querySelector('.photo-fallback').style.display='flex';"
+        >
+        <div class="photo-fallback" style="display: none; width: 100%; max-width: 700px; height: auto; aspect-ratio: 4/3; background: #e9e1c7; border-radius: 1.8rem; align-items: center; justify-content: center; color: #5b6e3b; font-size: 1rem; flex-direction: column; margin: 0 auto;">
+          <span style="font-size: 2.2rem;">📸</span>
+          <span>班级合影</span>
+          <span style="font-size: 0.7rem; opacity:0.7;">图片</span>
+        </div>
+        <div class="photo-caption">
+          <span>🍃</span> 24届5班 · 我们在一起 <span>🌿</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 两位老师卡片：生物老师 + 地理老师 -->
+    <div class="teachers-grid">
+      <!-- 生物老师卡片 -->
+      <div class="teacher-card">
+        <div class="icon-circle bio-icon">
+          🌿🧬
+        </div>
+        <div class="teacher-name">王佳佳</div>
+        <div class="subject-tag">生物老师</div>
+        <div class="message">
+          还记得显微镜下的叶绿体，<br>您带我们触摸生命的脉络。<br>即使初三不再有生物课，<br>那些细胞、光合与遗传的故事，<br>早已长成心里的森林。
+        </div>
+        <div class="memory-note">
+          🌱 “根深叶茂，生命如诗”
+        </div>
+      </div>
+
+      <!-- 地理老师卡片 -->
+      <div class="teacher-card">
+        <div class="icon-circle geo-icon">
+          🌍🧭
+        </div>
+        <div class="teacher-name">栗亚</div>
+        <div class="subject-tag">地理老师</div>
+        <div class="message">
+          您用粉笔画出季风与洋流，<br>带我们翻越山川与气候。<br>虽然初三课表少了地理，<br>但您教我们读懂的世界，<br>永远在脚下延伸。
+        </div>
+        <div class="memory-note">
+          🗺️ “经纬之间，心向远方”
+        </div>
+      </div>
+    </div>
+
+    <!-- 底部集体纪念语 -->
+    <div class="footer-message">
+      <p class="farewell-text">
+        ⏳ 初三的教室里，没有了生物与地理的课表，<br>
+        但显微镜的光、地图上的风，从未离开。<br>
+        感谢您们用两年时光，为我们打开自然与世界的窗。<br>
+        <span style="font-weight: 500; color: #365a1e;">此去山高水长，师恩永驻心房。</span>
+      </p>
+      <div class="leaf-decor">
+        <span>🍂</span><span>🌾</span><span>🍃</span><span>🗺️</span><span>🔬</span>
+      </div>
+      <span class="small-caps">—— 24届5班全体同学 · 谨致生物&地理老师</span>
+    </div>
+  </main>
 </body>
 </html>
